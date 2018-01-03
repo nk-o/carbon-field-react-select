@@ -1,44 +1,44 @@
-.carbon-field.carbon-react-select .Select-menu-outer {
+.carbon-field.carbon-react_select .Select-menu-outer {
     z-index: 1001;
     border-color: #ddd;
     border-radius: 0;
 }
-.carbon-field.carbon-react-select .Select-option {
+.carbon-field.carbon-react_select .Select-option {
     padding: 5px 10px;
 }
-.carbon-field.carbon-react-select .Select-option.is-focused {
+.carbon-field.carbon-react_select .Select-option.is-focused {
     background-color: #0384ba;
     color: #fff;
 }
-.carbon-field.carbon-react-select .Select-option:last-child {
+.carbon-field.carbon-react_select .Select-option:last-child {
     border-radius: 0;
 }
 
-.carbon-field.carbon-react-select .Select-clear {
+.carbon-field.carbon-react_select .Select-clear {
     font-size: 14px;
 }
 
-.carbon-field.carbon-react-select .Select-input > input {
+.carbon-field.carbon-react_select .Select-input > input {
     padding: 5px 0 12px;
 }
 
-.carbon-field.carbon-react-select .Select-arrow {
+.carbon-field.carbon-react_select .Select-arrow {
     margin-top: 3px;
     border-width: 5px 3px 1.5px;
 }
-.carbon-field.carbon-react-select .Select.is-open > .Select-control .Select-arrow {
+.carbon-field.carbon-react_select .Select.is-open > .Select-control .Select-arrow {
     border-width: 0 3px 5px;
 }
 
-.carbon-field.carbon-react-select .Select-control {
+.carbon-field.carbon-react_select .Select-control {
     height: 28px;
     border-color: #ddd;
     border-radius: 0;
     margin: 1px;
 }
-.carbon-field.carbon-react-select .Select-input {
+.carbon-field.carbon-react_select .Select-input {
     height: 26px;
 }
-.carbon-field.carbon-react-select .Select-placeholder, .Select--single > .Select-control .Select-value {
+.carbon-field.carbon-react_select .Select-placeholder, .Select--single > .Select-control .Select-value {
     line-height: 26px;
 }

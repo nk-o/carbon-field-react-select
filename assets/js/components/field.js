@@ -110,6 +110,6 @@ export const enhance = compose(
 );
 
 export default setStatic('type', [
-    'react-select',
+    'react_select',
 ])(enhance(React_Select_Field));
 
