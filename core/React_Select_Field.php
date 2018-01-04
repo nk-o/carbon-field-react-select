@@ -6,11 +6,42 @@ use Carbon_Fields\Field\Select_Field;
 
 class React_Select_Field extends Select_Field {
     /**
-     * Placeholder string
+     * Props
+     * Props descriptions you can find here - https://github.com/JedWatson/react-select#select-props
      *
-     * @var string
+     * @var array
      */
-    protected $placeholder = '';
+    protected $props = array(
+        'clearable'            => true,
+        'disabled'             => false,
+        'autoFocus'            => false,
+        'closeOnSelect'        => true,
+        'ignoreAccents'        => true,
+        'ignoreCase'           => true,
+        'labelKey'             => 'label',
+        'multi'                => false,
+        'onBlurResetsInput'    => true,
+        'onCloseResetsInput'   => true,
+        'onSelectResetsInput'  => true,
+        'openOnClick'          => true,
+        'openOnFocus'          => false,
+        'removeSelected'       => true,
+        'pageSize'             => 5,
+        'rtl'                  => false,
+        'scrollMenuIntoView'   => true,
+        'searchable'           => true,
+        'simpleValue'          => false,
+        'tabSelectsValue'      => true,
+        'trimFilter'           => false,
+        'valueKey'             => 'value',
+        'className'            => '',
+
+        'placeholder'          => 'Select...',
+        'clearAllText'         => 'Clear all',
+        'clearValueText'       => 'Clear value',
+        'noResultsText'        => 'No results found',
+        'searchPromptText'     => 'Type to search',
+    );
 
 	/**
 	 * Prepare the field type for use
@@ -43,9 +74,9 @@ class React_Select_Field extends Select_Field {
         $options = $this->parse_options( $this->get_options(), true );
         $value = strval( $this->get_formatted_value() );
         $field_data = array_merge( $field_data, array(
-            'value'       => strval( $value ),
-            'options'     => $options,
-            'placeholder' => $this->get_placeholder(),
+            'value'    => strval( $value ),
+            'options'  => $options,
+            'props'    => $this->get_props()
         ) );
         return $field_data;
     }
@@ -72,22 +103,22 @@ class React_Select_Field extends Select_Field {
     }
 
     /**
-     * Get placeholder
+     * Get props
      *
-     * @return string
+     * @return array
      */
-    public function get_placeholder() {
-        return $this->placeholder;
+    public function get_props() {
+        return $this->props;
     }
 
     /**
-     * Set placeholder
+     * Set props
      *
-     * @param  string   $placeholder
+     * @param  string   $props
      * @return self     $this
      */
-    public function set_placeholder( $placeholder ) {
-        $this->placeholder = $placeholder;
+    public function set_props( $props ) {
+        $this->props = array_merge( $this->props, $props );
         return $this;
     }
 }

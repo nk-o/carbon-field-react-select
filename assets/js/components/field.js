@@ -30,15 +30,16 @@ export const React_Select_Field = ({
     handleChange
 }) => {
     return <Field field={field} {...field.attributes}>
+        <div data-id={field.id}>
+            {/* ID of Select (helped when Select is disabled) */}
+        </div>
         <Select
             id={field.id}
             name={name}
             value={field.value}
             options={field.options}
-            placeholder={field.placeholder}
-            disabled={!field.ui.is_visible}
             onChange={handleChange}
-            {...field.attributes}
+            {...field.props}
         />
     </Field>;
 }
@@ -57,8 +58,37 @@ React_Select_Field.propTypes = {
             value: PropTypes.string,
             name: PropTypes.string,
         })),
-        attributes: PropTypes.object,
-        placeholder: PropTypes.string,
+        props: PropTypes.arrayOf(PropTypes.shape({
+            clearable: PropTypes.bool,
+            disabled: PropTypes.bool,
+            autoFocus: PropTypes.bool,
+            closeOnSelect: PropTypes.bool,
+            ignoreAccents: PropTypes.bool,
+            ignoreCase: PropTypes.bool,
+            labelKey: PropTypes.string,
+            multi: PropTypes.bool,
+            onBlurResetsInput: PropTypes.bool,
+            onCloseResetsInput: PropTypes.bool,
+            onSelectResetsInput: PropTypes.bool,
+            openOnClick: PropTypes.bool,
+            openOnFocus: PropTypes.bool,
+            removeSelected: PropTypes.bool,
+            pageSize: PropTypes.number,
+            rtl: PropTypes.bool,
+            scrollMenuIntoView: PropTypes.bool,
+            searchable: PropTypes.bool,
+            simpleValue: PropTypes.bool,
+            tabSelectsValue: PropTypes.bool,
+            trimFilter: PropTypes.bool,
+            valueKey: PropTypes.string,
+            className: PropTypes.string,
+
+            placeholder: PropTypes.string,
+            clearAllText: PropTypes.string,
+            clearValueText: PropTypes.string,
+            noResultsText: PropTypes.string,
+            searchPromptText: PropTypes.string,
+        })),
     }),
     handleChange: PropTypes.func,
 };

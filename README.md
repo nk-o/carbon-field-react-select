@@ -21,13 +21,44 @@ Field::make( 'react-select', 'alignment', 'Alignment' )
     ) ),
 ```
 
-Placeholder:
+Available Props:
 ```php
 Field::make( 'react-select', 'alignment', 'Alignment' )
     ->add_options( array(
-        'left' => 'Left',
-        'center' => 'Center',
-        'right' => 'Right',
+        'left'    => 'Left',
+        'center'  => 'Center',
+        'right'   => 'Right',
     ) )
-    ->set_placeholder( __( 'Choose Alignment', 'crb' ) ),
+    ->set_props( array(
+        'clearable'            => true,
+        'disabled'             => false,
+        'autoFocus'            => false,
+        'closeOnSelect'        => true,
+        'ignoreAccents'        => true,
+        'ignoreCase'           => true,
+        'labelKey'             => 'label',
+        'multi'                => false,
+        'onBlurResetsInput'    => true,
+        'onCloseResetsInput'   => true,
+        'onSelectResetsInput'  => true,
+        'openOnClick'          => true,
+        'openOnFocus'          => false,
+        'removeSelected'       => true,
+        'pageSize'             => 5,
+        'rtl'                  => false,
+        'scrollMenuIntoView'   => true,
+        'searchable'           => true,
+        'simpleValue'          => false,
+        'tabSelectsValue'      => true,
+        'trimFilter'           => false,
+        'valueKey'             => 'value',
+        'className'            => '',
+
+        'placeholder'          => 'Select...',
+        'clearAllText'         => 'Clear all',
+        'clearValueText'       => 'Clear value',
+        'noResultsText'        => 'No results found',
+        'searchPromptText'     => 'Type to search',
+    ) ),
 ```
+Props descriptions read here - https://github.com/JedWatson/react-select#select-props
