@@ -15,9 +15,9 @@ Default:
 ```php
 Field::make( 'react-select', 'alignment', 'Alignment' )
     ->add_options( array(
-        'left' => 'Left',
-        'center' => 'Center',
-        'right' => 'Right',
+        'left'    => 'Left',
+        'center'  => 'Center',
+        'right'   => 'Right',
     ) ),
 ```
 
