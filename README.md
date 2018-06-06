@@ -13,7 +13,7 @@ composer require nk-o/carbon-field-react-select
 
 Default:
 ```php
-Field::make( 'react-select', 'alignment', 'Alignment' )
+Field::make( 'react_select', 'alignment', 'Alignment' )
     ->add_options( array(
         'left'    => 'Left',
         'center'  => 'Center',
@@ -23,7 +23,7 @@ Field::make( 'react-select', 'alignment', 'Alignment' )
 
 Available Props:
 ```php
-Field::make( 'react-select', 'alignment', 'Alignment' )
+Field::make( 'react_select', 'alignment', 'Alignment' )
     ->add_options( array(
         'left'    => 'Left',
         'center'  => 'Center',
