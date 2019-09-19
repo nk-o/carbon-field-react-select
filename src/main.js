@@ -44,7 +44,6 @@ class React_Select_Field extends Component {
             field
         } = this.props;
         const value = field.value ? { value: field.value, label: this.getLabel( field.value ) } : '';
-        console.log(field.props);
 
         return (
             field.options.length > 0

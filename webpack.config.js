@@ -20,7 +20,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve( __dirname, 'build' ),
-		filename: isProduction ? '[name].min.js' : '[name].js'
+		filename: '[name].js'
 	},
 	module: {
 		rules: [
@@ -55,11 +55,6 @@ module.exports = {
 		]
 	},
 	externals: [
-		'@wordpress/compose',
-		'@wordpress/data',
-		'@wordpress/element',
-		'@wordpress/hooks',
-		'@wordpress/i18n',
 		'classnames',
 		'lodash'
 	].reduce( ( memo, name ) => {
@@ -71,11 +66,7 @@ module.exports = {
 	} ),
 	plugins: [
 		new MiniCssExtractPlugin( {
-			filename: isProduction ? '[name].min.css' : '[name].css'
-		} ),
-
-		new ProvidePlugin( {
-			'wp.element': '@wordpress/element'
+			filename: '[name].css'
 		} ),
 
 		...(

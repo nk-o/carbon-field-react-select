@@ -18,7 +18,7 @@ module.exports = {
 		production: {
 			plugins: [
 				[ '@wordpress/babel-plugin-makepot', {
-					output: 'languages/carbon-fields-react-select.pot'
+					output: 'languages/carbon-field-react-select.pot'
 				} ]
 			]
 		}
