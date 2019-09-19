@@ -1,14 +1,12 @@
 {
-    "name": "nk-o/carbon-field-react-select",
+    "name": "htmlburger/carbon-field-react-select",
     "description": "Carbon Fields extension, that adds a React_Select field type.",
-    "keywords": ["wordpress", "carbon-field", "carbon-field-react-select", "react-select"],
+    "keywords": ["wordpress", "carbon-field", "carbon-field-react-select"],
     "homepage": "https://nkdev.info/",
     "type": "library",
     "license": "GPL-2.0+",
     "authors": [],
-    "require": {
-        "htmlburger/carbon-fields": "^2.0"
-    },
+    "require": {},
     "autoload": {
         "files": [
             "field.php"

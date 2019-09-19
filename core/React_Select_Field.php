@@ -12,10 +12,10 @@ class React_Select_Field extends Select_Field {
      * @var array
      */
     protected $props = array(
-        'clearable'            => true,
-        'disabled'             => false,
+        'isClearable'          => true,
+        'isDisabled'           => false,
         'autoFocus'            => false,
-        'closeOnSelect'        => true,
+        'closeMenuOnSelect'    => true,
         'ignoreAccents'        => true,
         'ignoreCase'           => true,
         'labelKey'             => 'label',
@@ -29,7 +29,7 @@ class React_Select_Field extends Select_Field {
         'pageSize'             => 5,
         'rtl'                  => false,
         'scrollMenuIntoView'   => true,
-        'searchable'           => true,
+        'isSearchable'         => true,
         'simpleValue'          => false,
         'tabSelectsValue'      => true,
         'trimFilter'           => false,
@@ -44,8 +44,13 @@ class React_Select_Field extends Select_Field {
     );
 
 	/**
-	 * Prepare the field type for use
-	 * Called once per field type when activated
+	 * Prepare the field type for use.
+	 * Called once per field type when activated.
+	 *
+	 * @static
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public static function field_type_activated() {
 		$dir = \Carbon_Field_React_Select\DIR . '/languages/';
@@ -55,15 +60,22 @@ class React_Select_Field extends Select_Field {
 	}
 
 	/**
-	 * Enqueue scripts and styles in admin
-	 * Called once per field type
+	 * Enqueue scripts and styles in admin.
+	 * Called once per field type.
+	 *
+	 * @static
+	 * @access public
+	 *
+	 * @return void
 	 */
 	public static function admin_enqueue_scripts() {
 		$root_uri = \Carbon_Fields\Carbon_Fields::directory_to_url( \Carbon_Field_React_Select\DIR );
 
-        // Carbon React_Select Field
-        wp_enqueue_script( 'carbon-field-react-select', $root_uri . '/assets/js/bundle.js', array( 'carbon-fields-boot' ) );
-        wp_enqueue_style( 'carbon-field-react-select', $root_uri . '/assets/css/field.css' );
+		// Enqueue field styles.
+		wp_enqueue_style( 'carbon-field-react-select', $root_uri . '/build/bundle.css' );
+
+		// Enqueue field scripts.
+		wp_enqueue_script( 'carbon-field-react-select', $root_uri . '/build/bundle.js', array( 'carbon-fields-core' ) );
 	}
 
     /**
