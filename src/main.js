@@ -54,6 +54,8 @@ class React_Select_Field extends Component {
                         value={ value }
                         options={ field.options }
                         onChange={ this.handleChange }
+                        className="cf-react__select"
+                        classNamePrefix="cf-react-select"
                         {...field.props}
                     />
                 )
