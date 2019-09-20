@@ -3,6 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/main.js:60
+#: src/main.js:62
 msgid "No options"
 msgstr ""

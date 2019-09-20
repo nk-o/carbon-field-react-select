@@ -2,3 +2,82 @@
    React Select css
    ========================================================================== */
 
+$color-white: #fff;
+$wp-color-medium-blue: #00a0d2;
+$wp-color-base-gray: #32373c;
+$wp-color-dark-silver-gray: #82878c;
+$wp-color-gray-light-800: lighten($wp-color-base-gray, 52%);
+$wp-color-gray-light-500: lighten($wp-color-base-gray, 68%);
+$size-base: 4px;
+
+.cf-react-select__control {
+  height: 30px;
+  min-height: 0;
+  border-color: $wp-color-gray-light-500;
+
+  &:hover {
+    border-color: $wp-color-gray-light-500;
+  }
+
+  &--is-focused,
+  &--is-focused:hover {
+    border-color: $wp-color-medium-blue !important;
+    box-shadow: none;
+  }
+}
+
+.cf-react-select__placeholder {
+  color: $wp-color-gray-light-800;
+}
+
+.cf-react-select__value-container {
+  padding-left: $size-base;
+  padding-right: $size-base;
+}
+
+.cf-react-select__multi-value {
+  align-items: center;
+  margin: 0;
+  background-color: transparent;
+}
+
+.cf-react-select__multi-value__label {
+  padding-left: 3px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.cf-react-select__multi-value__remove {
+  padding: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.cf-react-select__input {
+  input[id],
+  input[id]:focus {
+    box-shadow: none;
+  }
+}
+
+.cf-react-select__menu {
+  z-index: 9999;
+}
+
+.cf-react-select__option {
+  padding: $size-base;
+
+  &--is-focused {
+    background-color: $wp-color-medium-blue;
+    color: $color-white;
+  }
+}
+
+.cf-react-select__indicators {
+  height: 30px;
+  .cf-react-select__indicator {
+    padding: 4px;
+  }
+}
