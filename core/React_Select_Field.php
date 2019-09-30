@@ -35,6 +35,7 @@ class React_Select_Field extends Select_Field {
         'trimFilter'           => false,
         'valueKey'             => 'value',
         'className'            => '',
+        'icons'                => false,
 
         'placeholder'          => 'Select...',
         'clearAllText'         => 'Clear all',
@@ -106,10 +107,18 @@ class React_Select_Field extends Select_Field {
             $options = call_user_func( $options );
         }
         foreach ( $options as $key => $value ) {
-            $parsed[] = array(
-                'value' => $stringify_value ? strval( $key ) : $key,
-                'label' => strval( $value ),
-            );
+            if ( $this->get_props()['icons'] ) {
+                $parsed[] = array(
+                    'value' => $stringify_value ? strval( $value['value'] ) : $value['value'],
+                    'label' => strval( $value['label'] ),
+                    'icon' => $value['icon'],
+                );
+            } else {
+                $parsed[] = array(
+                    'value' => $stringify_value ? strval( $key ) : $key,
+                    'label' => strval( $value ),
+                );
+            }
         }
         return $parsed;
     }

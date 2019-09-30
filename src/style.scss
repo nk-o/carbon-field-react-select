@@ -35,6 +35,21 @@ $size-base: 4px;
   padding-right: $size-base;
 }
 
+.cf-react-select__single-value,
+.cf-react-select__menu {
+  .input-select-label-with-icon {
+    display: inline-flex;
+    line-height: 15px;
+    .input-select__icon svg {
+      width: 30px;
+      height: 15px;
+    }
+    .input-select__icon {
+      margin-right: 5px;
+    }
+  }
+}
+
 .cf-react-select__multi-value {
   align-items: center;
   margin: 0;

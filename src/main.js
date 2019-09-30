@@ -4,6 +4,7 @@
 const { Component } = wp.element;
 const { __ } = wp.i18n;
 import Select from 'react-select';
+import { components } from 'react-select';
 import PropTypes from 'prop-types';
 
 class React_Select_Field extends Component {
@@ -20,6 +21,31 @@ class React_Select_Field extends Component {
         onChange( id, e.value );
     }
 
+    /**
+     * Get Icon by Value.
+     *
+     * @param value
+     * @return {string}
+     */
+    getIcon( value ) {
+        const { field } = this.props;
+        let icon = '';
+        if ( typeof field.options !== 'undefined' ) {
+            Object.keys( field.options ).map( ( k ) => {
+                if ( field.options[ k ].value === value ) {
+                    icon = field.options[ k ].icon;
+                }
+            } );
+        }
+        return icon;
+    }
+
+    /**
+     * Get Label by Value.
+     *
+     * @param value
+     * @return {string}
+     */
     getLabel( value ) {
         const { field } = this.props;
         let label = '';
@@ -32,6 +58,17 @@ class React_Select_Field extends Component {
         }
         return label;
     }
+
+    /**
+     * Print String how Html.
+     *
+     * @param string
+     * @return {{__html: *}}
+     */
+    createMarkup( string ) {
+        return {__html: string};
+    }
+
     /**
      * Renders the component.
      *
@@ -41,9 +78,33 @@ class React_Select_Field extends Component {
         const {
             id,
             name,
-            field
+            field,
         } = this.props;
-        const value = field.value ? { value: field.value, label: this.getLabel( field.value ) } : '';
+
+        const { Option } = components;
+        const {
+            icons,
+        } = field.props;
+        let customComponents = {};
+        let value = field.value ? { value: field.value, label: this.getLabel( field.value ) } : '';
+
+        const IconOption = (props) => (
+            <Option {...props}>
+                <span className="input-select-label-with-icon">
+                { props.data.icon && <span className="input-select__icon" dangerouslySetInnerHTML={this.createMarkup( props.data.icon )}/> }
+                {props.data.label}
+                </span>
+            </Option>
+        );
+
+        if ( icons ) {
+            value = field.value ?
+                {
+                    value: field.value,
+                    label: <span className="input-select-label-with-icon"><span className="input-select__icon" dangerouslySetInnerHTML={ this.createMarkup( this.getIcon( field.value ) ) } />{ this.getLabel( field.value ) }</span>,
+                } : '';
+            customComponents = { Option: IconOption };
+        }
 
         return (
             field.options.length > 0
@@ -52,10 +113,12 @@ class React_Select_Field extends Component {
                         id={ id }
                         name={ name }
                         value={ value }
+                        defaultValue={ field.options [0] }
                         options={ field.options }
                         onChange={ this.handleChange }
                         className="cf-react__select"
                         classNamePrefix="cf-react-select"
+                        components={ customComponents }
                         {...field.props}
                     />
                 )
@@ -102,6 +165,7 @@ React_Select_Field.propTypes = {
             trimFilter: PropTypes.bool,
             valueKey: PropTypes.string,
             className: PropTypes.string,
+            icons: PropTypes.bool,
 
             placeholder: PropTypes.string,
             clearAllText: PropTypes.string,

@@ -21,6 +21,26 @@ Field::make( 'react_select', 'alignment', 'Alignment' )
     ) ),
 ```
 
+Icons:
+```php
+Field::make( 'react_select', 'alignment', 'Alignment' )
+    ->add_options( array(
+        array(
+          'icon' => '<svg xmlns="http://www.w3.org/2000/svg">...</svg>',
+          'label' => esc_html__( 'Icon 1', '@@text_domain' ),
+          'value' => 'icon_1',
+        ),
+        array(
+          'icon' => '<svg xmlns="http://www.w3.org/2000/svg">...</svg>',
+          'label' => esc_html__( 'Icon 2', '@@text_domain' ),
+          'value' => 'icon_2',
+        ),
+    ) )
+    ->set_props( array(
+        'icons' => true,
+    ) ),
+```
+
 Available Props:
 ```php
 Field::make( 'react_select', 'alignment', 'Alignment' )
@@ -53,6 +73,7 @@ Field::make( 'react_select', 'alignment', 'Alignment' )
         'trimFilter'           => false,
         'valueKey'             => 'value',
         'className'            => '',
+        'icons'                => false,
 
         'placeholder'          => 'Select...',
         'clearAllText'         => 'Clear all',
