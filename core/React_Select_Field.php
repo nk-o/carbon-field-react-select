@@ -70,7 +70,7 @@ class React_Select_Field extends Select_Field {
 	 * @return void
 	 */
 	public static function admin_enqueue_scripts() {
-		$root_uri = \Carbon_Fields\Carbon_Fields::directory_to_url( \Carbon_Field_React_Select\DIR );
+        $root_uri = apply_filters( 'carbon_field_react_select_root_uri', \Carbon_Fields\Carbon_Fields::directory_to_url( \Carbon_Field_React_Select\DIR ) );
 
 		// Enqueue field styles.
 		wp_enqueue_style( 'carbon-field-react-select', $root_uri . '/build/bundle.css' );
