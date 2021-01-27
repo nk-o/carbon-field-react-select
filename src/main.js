@@ -5,6 +5,7 @@ const { Component } = wp.element;
 const { __ } = wp.i18n;
 import Select from 'react-select';
 import { components } from 'react-select';
+import selectStyles from 'gutenberg-react-select-styles';
 import PropTypes from 'prop-types';
 
 class React_Select_Field extends Component {
@@ -119,6 +120,7 @@ class React_Select_Field extends Component {
                         className="cf-react__select"
                         classNamePrefix="cf-react-select"
                         components={ customComponents }
+						styles={ selectStyles }
                         {...field.props}
                     />
                 )
