@@ -3,9 +3,6 @@
  */
 const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
-const TerserPlugin = require( 'terser-webpack-plugin' );
-const { ProvidePlugin } = require( 'webpack' );
 
 /**
  * Indicates if we're running the build process in production mode.
@@ -15,6 +12,7 @@ const { ProvidePlugin } = require( 'webpack' );
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
+	mode: isProduction ? 'production' : 'development',
 	entry: {
 		bundle: './src/index.js'
 	},
@@ -68,22 +66,6 @@ module.exports = {
 		new MiniCssExtractPlugin( {
 			filename: '[name].css'
 		} ),
-
-		...(
-			isProduction
-			? [
-				new OptimizeCssAssetsPlugin( {
-					cssProcessorPluginOptions: {
-						preset: [ 'default', { discardComments: { removeAll: true } } ]
-					}
-				} ),
-				new TerserPlugin( {
-					cache: true,
-					parallel: true
-				} )
-			]
-			: []
-		)
 	],
 	stats: {
 		modules: false,
