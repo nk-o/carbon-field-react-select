@@ -14,6 +14,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
 	mode: isProduction ? 'production' : 'development',
+	devtool: 'source-map',
 	entry: {
 		bundle: './src/index.js'
 	},
