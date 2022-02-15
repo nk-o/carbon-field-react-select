@@ -52,18 +52,11 @@ module.exports = {
 			}
 		]
 	},
-	externals: [
-		'classnames',
-		'lodash'
-	].reduce( ( memo, name ) => {
-		memo[ name ] = `cf.vendor['${ name }']`;
-
-		return memo;
-	}, {
+	externals: {
 		'@carbon-fields/core': 'cf.core',
 		'react': 'React',
 		'react-dom': 'ReactDOM',
-	} ),
+	},
 	plugins: [
 		new MiniCssExtractPlugin( {
 			filename: '[name].css'

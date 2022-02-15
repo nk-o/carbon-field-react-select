@@ -1,12 +1,19 @@
 /**
  * External dependencies.
  */
-const { Component } = wp.element;
-const { __ } = wp.i18n;
 import Select, { components } from 'react-select';
 import selectStyles from 'gutenberg-react-select-styles';
 import PropTypes from 'prop-types';
 
+/**
+ * WordPress dependencies.
+ */
+const { Component } = wp.element;
+const { __ } = wp.i18n;
+
+/**
+ * Component.
+ */
 class React_Select_Field extends Component {
 
     /**
