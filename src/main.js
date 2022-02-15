@@ -25,7 +25,7 @@ class React_Select_Field extends Component {
     handleChange = ( e ) => {
         const { id, onChange } = this.props;
 
-        onChange( id, e.value );
+        onChange( id, e?.value || '' );
     }
 
     /**
