@@ -3,6 +3,7 @@
  */
 const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const TerserPlugin = require( 'terser-webpack-plugin' );
 
 /**
  * Indicates if we're running the build process in production mode.
@@ -62,6 +63,14 @@ module.exports = {
 			filename: '[name].css'
 		} ),
 	],
+	optimization: {
+		minimize: isProduction,
+		minimizer: [
+			new TerserPlugin( {
+				extractComments: false,
+			} ),
+		],
+	},
 	stats: {
 		modules: false,
 		hash: false,
