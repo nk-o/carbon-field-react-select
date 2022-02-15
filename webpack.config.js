@@ -60,7 +60,9 @@ module.exports = {
 
 		return memo;
 	}, {
-		'@carbon-fields/core': 'cf.core'
+		'@carbon-fields/core': 'cf.core',
+		'react': 'React',
+		'react-dom': 'ReactDOM',
 	} ),
 	plugins: [
 		new MiniCssExtractPlugin( {

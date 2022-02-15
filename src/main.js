@@ -3,8 +3,7 @@
  */
 const { Component } = wp.element;
 const { __ } = wp.i18n;
-import Select from 'react-select';
-import { components } from 'react-select';
+import Select, { components } from 'react-select';
 import selectStyles from 'gutenberg-react-select-styles';
 import PropTypes from 'prop-types';
 
