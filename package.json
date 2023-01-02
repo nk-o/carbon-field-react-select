@@ -14,7 +14,7 @@
     "@babel/preset-react": "^7.16.7",
     "@wordpress/babel-plugin-makepot": "^4.2.1",
     "autoprefixer": "^10.4.2",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.3.0",
     "browserslist-config-nk": "^1.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
