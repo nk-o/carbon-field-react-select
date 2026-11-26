@@ -8,13 +8,13 @@ import PropTypes from 'prop-types';
 /**
  * WordPress dependencies.
  */
-const { Component } = wp.element;
-const { __ } = wp.i18n;
+import * as element from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Component.
  */
-class React_Select_Field extends Component {
+class React_Select_Field extends element.Component {
 
     /**
      * Handles the change of the input.
