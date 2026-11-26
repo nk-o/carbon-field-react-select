@@ -56,8 +56,10 @@ module.exports = {
 	},
 	externals: {
 		'@carbon-fields/core': 'cf.core',
-		'react': 'React',
-		'react-dom': 'ReactDOM',
+		'react': [ 'cf', 'vendor', 'react' ],
+		'react-dom': [ 'cf', 'vendor', 'react-dom' ],
+		'@wordpress/element': [ 'cf', 'vendor', '@wordpress/element' ],
+		'@wordpress/i18n': [ 'cf', 'vendor', '@wordpress/i18n' ],
 	},
 	plugins: [
 		new MiniCssExtractPlugin( {

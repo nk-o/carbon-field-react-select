@@ -4,8 +4,8 @@ module.exports = {
 			modules: false
 		} ],
 		[ '@babel/preset-react', {
-			pragma: 'wp.element.createElement',
-			pragmaFrag: 'wp.element.Fragment'
+			pragma: 'element.createElement',
+			pragmaFrag: 'element.Fragment'
 		} ]
 	],
 	env: {
